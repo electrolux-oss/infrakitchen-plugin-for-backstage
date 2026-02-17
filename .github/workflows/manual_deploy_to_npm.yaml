@@ -42,27 +42,21 @@ jobs:
         run: yarn tsc:full && yarn lint:all
 
       #############################################################################
-      # publish a library to npm
+      # publish a plugin to npm
       #############################################################################
-      - name: Setup version based on branch
-        working-directory: ./ui/frontend-lib
+      - name: change infrakitchen plugin version to `semver-sha` for PR
+        working-directory: ./plugins/infrakitchen
         run: |
           VERSION=$(npm pkg get version --workspaces=false | tr -d \")
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
             npm pkg set version=$VERSION
           else
-            npm pkg set version=$VERSION-$(date +%F%T | tr -d '\-:')-$(echo ${{ github.sha }} | cut -c 1-7)
+            npm pkg set version=$VERSION-$(echo ${{ github.sha }} | cut -c 1-7)
           fi
 
-      #############################################################################
-      # publish a release to npm
-      #############################################################################
-      - name: publish package
-        working-directory: ./ui/frontend-lib
+      - name: publish
         run: |
-          yarn install --immutable
-          yarn build
           yarn config set -H 'npmAuthToken' "${{secrets.NPM_TOKEN}}"
-          yarn npm publish --access public --tolerate-republish
+          yarn workspaces foreach -v -A --no-private npm publish --access public --tolerate-republish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
