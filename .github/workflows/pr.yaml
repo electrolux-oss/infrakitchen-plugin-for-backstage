@@ -1,0 +1,58 @@
+name: PR checker
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**/docs/**"
+      - "**.md"
+      - ".github/**"
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - "**/docs/**"
+      - "**.md"
+      - ".github/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-code:
+    runs-on: ubuntu-latest
+
+    env:
+      NODE_OPTIONS: --max-old-space-size=8192
+
+    steps:
+      #############################################################################
+      # common steps
+      #############################################################################
+
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+
+      - name: use node.js 24.x
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: 24.x
+
+      - name: yarn install
+        run: |
+          yarn install
+
+      - name: validate config
+        run: yarn backstage-cli config:check --lax
+
+      - name: lint
+        run: yarn backstage-cli repo lint
+
+      - name: type checking and declarations
+        run: yarn tsc:full
+
+      - name: build
+        run: yarn workspaces foreach --all -v --no-private run build
+
+      - name: verify type dependencies
+        run: yarn tsc:full && yarn lint:all
