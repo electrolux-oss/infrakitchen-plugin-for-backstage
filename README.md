@@ -96,6 +96,30 @@ proxy:
         - 'Access-Control-Expose-Headers'
 ```
 
+Ensure the CORS configuration in your `app-config.yaml` allows passing required headers:
+
+```yaml
+backend:
+  # ...
+  cors:
+    origin:
+      - http://${HOSTNAME}:3000
+      - http://127.0.0.1:3000
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+    allowedHeaders:
+      - Authorization
+      - Content-Range  # <- This can be overlooked
+      - Content-Type
+      - Range          # <- This can be overlooked
+      - X-User-Id
+      - x-requested-with
+  reading:
+    allow:
+      - host: ${HOSTNAME}:3000
+      - host: 127.0.0.1:3000
+```
+
 ### Authentication
 
 The plugin automatically uses Backstage's identity API to authenticate requests to InfraKitchen.
