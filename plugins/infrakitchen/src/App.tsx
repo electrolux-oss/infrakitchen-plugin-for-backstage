@@ -12,6 +12,7 @@ import {
   useFilteredProtectedRoutes,
   usePermissionProvider,
   GradientCircularProgress,
+  FavoritesProvider,
 } from '@electrolux-oss/infrakitchen';
 
 import { useApi } from '@backstage/core-plugin-api';
@@ -74,12 +75,6 @@ const allTabs = [
     label: 'Source Codes',
     path: '/source_codes',
     permissionKey: 'source_code',
-  },
-  {
-    id: 'source-code-versions',
-    label: 'Source Code Versions',
-    path: '/source_code_versions',
-    permissionKey: 'source_code_version',
   },
   {
     id: 'workspaces',
@@ -226,11 +221,13 @@ export const AppWrapper = () => {
           webSocketEnabled={false}
         >
           <PermissionProvider>
-            <EventProvider>
-              <NotificationProvider>
-                <InfrakitchenApp />
-              </NotificationProvider>
-            </EventProvider>
+            <FavoritesProvider>
+              <EventProvider>
+                <NotificationProvider>
+                  <InfrakitchenApp />
+                </NotificationProvider>
+              </EventProvider>
+            </FavoritesProvider>
           </PermissionProvider>
         </ConfigProvider>
       </LocalStorageProvider>
