@@ -4595,7 +4595,7 @@ __metadata:
     "@codemirror/lang-json": "npm:^6.0.2"
     "@codemirror/state": "npm:^6.0.0"
     "@codemirror/view": "npm:^6.0.0"
-    "@electrolux-oss/infrakitchen": "npm:0.2.2"
+    "@electrolux-oss/infrakitchen": "npm:0.3.0"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.1"
     "@fontsource/space-grotesk": "npm:^5.2.10"
@@ -4624,10 +4624,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@electrolux-oss/infrakitchen@npm:0.2.2":
-  version: 0.2.2
-  resolution: "@electrolux-oss/infrakitchen@npm:0.2.2"
-  checksum: 10c0/7af36d20a7d272e9b3bef5cf84effe2870604512c8580edeeb841bd57dac89116666cc8ec266b95be8b07cef6a97199bdaafd557ee2e5f9c6c5d99449fd37ad7
+"@electrolux-oss/infrakitchen@npm:0.3.0":
+  version: 0.3.0
+  resolution: "@electrolux-oss/infrakitchen@npm:0.3.0"
+  checksum: 10c0/fdaf44d4e5bd0fc962828061ffd41ca7f3e82a799bda9afe2fb702eeee84a38bc84d28dd67336ae4bd84a18ec33a7a348c28667158cbfda015a9dac6d9012803
   languageName: node
   linkType: hard
 
