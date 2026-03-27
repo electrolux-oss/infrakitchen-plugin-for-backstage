@@ -35,8 +35,8 @@
     "test": "backstage-cli package test"
   },
   "dependencies": {
-    "@backstage/core-components": "^0.18.7",
-    "@backstage/core-plugin-api": "^1.12.3",
+    "@backstage/core-components": "^0.18.8",
+    "@backstage/core-plugin-api": "^1.12.4",
     "@backstage/theme": "^0.7.2",
     "@codemirror/lang-json": "^6.0.2",
     "@codemirror/state": "^6.5.4",
@@ -61,10 +61,10 @@
     "react-use": "^17.6.0"
   },
   "devDependencies": {
-    "@backstage/cli": "^0.35.4",
-    "@backstage/core-app-api": "^1.19.5",
-    "@backstage/dev-utils": "^1.1.20",
-    "@backstage/test-utils": "^1.7.15",
+    "@backstage/cli": "^0.36.0",
+    "@backstage/core-app-api": "^1.19.6",
+    "@backstage/dev-utils": "^1.1.21",
+    "@backstage/test-utils": "^1.7.16",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^14.3.1",
     "@testing-library/user-event": "^14.6.1",
