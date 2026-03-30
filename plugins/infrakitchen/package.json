@@ -1,6 +1,6 @@
 {
   "name": "@electrolux-oss/infrakitchen-plugin-for-backstage",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "backstage": {
     "role": "frontend-plugin",
     "pluginId": "infrakitchen",
@@ -41,7 +41,7 @@
     "@codemirror/lang-json": "^6.0.2",
     "@codemirror/state": "^6.5.4",
     "@codemirror/view": "^6.39.16",
-    "@electrolux-oss/infrakitchen": "0.3.0",
+    "@electrolux-oss/infrakitchen": "0.3.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@fontsource/space-grotesk": "^5.2.10",

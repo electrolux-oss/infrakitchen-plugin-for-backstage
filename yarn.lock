@@ -4529,7 +4529,7 @@ __metadata:
     "@codemirror/lang-json": "npm:^6.0.2"
     "@codemirror/state": "npm:^6.5.4"
     "@codemirror/view": "npm:^6.39.16"
-    "@electrolux-oss/infrakitchen": "npm:0.3.0"
+    "@electrolux-oss/infrakitchen": "npm:0.3.1"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.1"
     "@fontsource/space-grotesk": "npm:^5.2.10"
@@ -4558,10 +4558,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@electrolux-oss/infrakitchen@npm:0.3.0":
-  version: 0.3.0
-  resolution: "@electrolux-oss/infrakitchen@npm:0.3.0"
-  checksum: 10c0/fdaf44d4e5bd0fc962828061ffd41ca7f3e82a799bda9afe2fb702eeee84a38bc84d28dd67336ae4bd84a18ec33a7a348c28667158cbfda015a9dac6d9012803
+"@electrolux-oss/infrakitchen@npm:0.3.1":
+  version: 0.3.1
+  resolution: "@electrolux-oss/infrakitchen@npm:0.3.1"
+  checksum: 10c0/f81d119af6b8535b2e49a42e4ad94eb2e76351a914e5106e06f2e92f3fbb24af4a56d1b5c6dd258aa76c7b44995d33f4341442f5bbbffd9a49d035ad12803cc4
   languageName: node
   linkType: hard
 
@@ -30149,6 +30149,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@backstage/cli": "npm:^0.36.0"
+    "@backstage/cli-defaults": "npm:^0.1.0"
     "@backstage/e2e-test-utils": "npm:^0.1.2"
     "@jest/environment-jsdom-abstract": "npm:^30.2.0"
     "@playwright/test": "npm:^1.58.2"
